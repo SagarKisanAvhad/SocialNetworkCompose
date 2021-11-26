@@ -1,4 +1,4 @@
-package com.example.socialnetworkcompose.ui.theme
+package com.example.socialnetworkcompose.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
