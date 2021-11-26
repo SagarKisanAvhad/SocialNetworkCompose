@@ -1,5 +1,6 @@
 package com.example.socialnetworkcompose.presentation.splash
 
+import com.example.socialnetworkcompose.data.DelayFakeApi
 import com.example.socialnetworkcompose.data.FakeMoApi
 import com.example.socialnetworkcompose.data.SuspendingFakeApi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -28,6 +29,11 @@ class SplashViewModelTest {
     @Test(expected = TimeoutCancellationException::class)
     fun `test load data timeout`() = runBlockingTest {
         viewModel.loadDataTimeout(SuspendingFakeApi())
+    }
+
+    @Test(expected = TimeoutCancellationException::class)
+    fun `test load data timeout using delay`() = runBlockingTest {
+        viewModel.loadDataTimeout(DelayFakeApi(5_001))
     }
 
 
