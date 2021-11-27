@@ -15,6 +15,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import com.example.socialnetworkcompose.R
+import com.example.socialnetworkcompose.presentation.util.Screen
+import com.example.socialnetworkcompose.util.Constants.SPLASH_SCREEN_DURATION
+import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
@@ -34,8 +37,9 @@ fun SplashScreen(navController: NavController) {
                 }
             )
         )
+        delay(SPLASH_SCREEN_DURATION)
+        navController.navigate(Screen.LoginScreen.route)
     }
-
 
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Image(
